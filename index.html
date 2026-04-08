@@ -331,7 +331,17 @@ notesContainer.addEventListener("click", (e) => {
  deleteNoteById(id);
  }
 });
- </script>
 
+function updateWindowSize() {
+ const w = window.innerWidth;
+ const h = window.innerHeight;
+ windowSizeSpan.textContent = `${w} x ${h} px`;
+}
+ </script>
+function updateWindowSize() {
+ const w = window.innerWidth;
+ const h = window.innerHeight;
+ windowSizeSpan.textContent = `${w} x ${h} px`;
+}
 </body>
 </html>
