@@ -339,6 +339,19 @@ notesContainer.addEventListener("click", (e) => {
  const id = parseInt(btn.getAttribute("data-id"), 10);
  deleteNoteById(id);
  }
+ // Edit
+      const editTarget = e.target.closest('[data-action="edit"]');
+      if (editTarget) {
+        const id = parseInt(editTarget.getAttribute("data-id"), 10);
+        const found = notes.find(n => n.id === id);
+        if (found) {
+          const newTitle = prompt("New title:", found.title);
+          if (newTitle !== null && newTitle.trim() !== "") {
+            found.title = newTitle.trim();
+            renderNotes();
+          }
+        }
+    }
 });
 
 function updateWindowSize() {
